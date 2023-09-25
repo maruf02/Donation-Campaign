@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ card }) => {
   const {
+    id,
     picture,
     category,
     title,
@@ -20,7 +22,7 @@ const Card = ({ card }) => {
     backgroundColor: color_for_category_bg,
   };
   return (
-    <div className="">
+    <Link to={`/card/${id}`}>
       <div className="card card-compact w-fit  shadow-xl" style={cardStyle}>
         <figure>
           <img src={picture} alt="" className="w-80 h-48" />
@@ -37,7 +39,7 @@ const Card = ({ card }) => {
           </h2>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

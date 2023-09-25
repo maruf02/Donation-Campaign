@@ -6,7 +6,7 @@ const MenuBar = () => {
     <div className="bg-white container mx-auto flex justify-between ">
       {/* this is for logo */}
       <div>
-        <img src="src/assets/Logo.png" alt="" />
+        <img src="../Logo.png" alt="" />
       </div>
       <div className="flex gap-4 mt-6 list-none ">
         <li>
