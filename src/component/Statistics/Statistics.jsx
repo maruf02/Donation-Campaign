@@ -27,10 +27,8 @@ const Statistics = () => {
 
   const data = [
     ["Task", "Hours per Day"],
-    // Set "Work" value to totalCards
     ["Your Donation", totalStoreCards],
     ["Total Donation", totalCards],
-    // Set "Eat" value to totalStoreCards
   ];
 
   const options = {
