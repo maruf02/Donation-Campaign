@@ -1,27 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-
-const abc = 3;
-
-export const data = [
-  ["Task", "Hours per Day"],
-  ["Work", 12],
-  ["Eat", 3],
-];
-
-export const options = {
-  title: "My Daily Activities",
-};
+import { getStoreDonate } from "../../utility/localStorage";
 
 const Statistics = () => {
+  const [cards, setCards] = useState([]);
+  const [totalCards, setTotalCards] = useState(0);
+  const [totalStoreCards, setTotalStoreCards] = useState(0);
+
+  useEffect(() => {
+    fetch("CardData.json")
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+    // .then((data) => setDisplayCard(data));
+  }, []);
+  useEffect(() => {
+    const storedCardId = getStoreDonate();
+    setTotalStoreCards(storedCardId.length);
+    const newCardLength = cards.length - storedCardId.length;
+    setTotalCards(newCardLength);
+  }, [cards]);
+
+  // console.log(cards.length);
+  // const totalCards = cards.length;
+  // const storedCardId = getStoreDonate();
+  // const totalStoreCards = storedCardId.length;
+
+  const data = [
+    ["Task", "Hours per Day"],
+    // Set "Work" value to totalCards
+    ["Your Donation", totalStoreCards],
+    ["Total Donation", totalCards],
+    // Set "Eat" value to totalStoreCards
+  ];
+
+  const options = {
+    title: "My Daily Activities",
+    legend: {
+      position: "bottom",
+    },
+    colors: ["#00C49F", "#FF444A"],
+  };
+
   return (
-    <Chart
-      chartType="PieChart"
-      data={data}
-      options={options}
-      width={"100%"}
-      height={"400px"}
-    />
+    <div>
+      <h2>card length: {cards.length}</h2>
+      <h2>donate Store Length:{totalStoreCards}</h2>
+      <Chart
+        chartType="PieChart"
+        data={data}
+        options={options}
+        width={"100%"}
+        height={"400px"}
+      />
+    </div>
   );
 };
 

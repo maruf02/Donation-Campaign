@@ -14,7 +14,7 @@ const Donations = () => {
       const donated = donates.filter((donate) =>
         storedCardId.includes(donate.id)
       );
-      // console.log(donated);
+      console.log("donated", storedCardId.length);
       setHaveDonate(donated);
     }
   }, []);
