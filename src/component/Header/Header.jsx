@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MenuBar from "../MenuBar/MenuBar";
 
-const Header = () => {
+const Header = ({ setSearchText }) => {
+  const handleClickSearch = () => {
+    const searchTextInput = document.getElementById("searchText");
+    const searchText = searchTextInput.value;
+    setSearchText(searchText);
+    console.log("abc", searchText);
+  };
+
   return (
     <div className="container mx-auto ">
       <div
@@ -19,8 +26,10 @@ const Header = () => {
             </h1>
 
             <div>
-              <input type="text" className="bg-white" />
-              <button className="btn btn-primary">Get Started</button>
+              <input type="text" className="bg-white" id="searchText" />
+              <button onClick={handleClickSearch} className="btn btn-primary">
+                Get Started
+              </button>
             </div>
           </div>
         </div>
