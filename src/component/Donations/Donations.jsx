@@ -21,8 +21,8 @@ const Donations = () => {
 
   console.log(haveDonate);
   return (
-    <div className="container mx-auto mt-20">
-      <div className="grid grid-cols-2 gap-10">
+    <div className="container mx-auto mt-20 h-full lg:h-screen">
+      <div className="grid grid-col-span-1 lg:grid-cols-2 gap-10">
         {haveDonate.slice(0, allDonateData).map((card) => (
           <DonateCard key={card.id} card={card}></DonateCard>
         ))}

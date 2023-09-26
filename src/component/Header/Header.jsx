@@ -30,12 +30,12 @@ const Header = ({ setSearchText }) => {
                 type="text"
                 placeholder="Search here...."
                 id="searchText"
-                className="input input-bordered w-full max-w-xs bg-white"
+                className="input input-bordered w-1/2 md:w-full  md:max-w-xs bg-white"
               />
               <button
                 onClick={handleClickSearch}
                 // className="btn btn-primary relative -left-2 rounded-r-lg"
-                className="bg-[#FF444A] px-5 py-3 rounded-r-lg relative -left-2"
+                className="bg-[#FF444A] text-white text-base font-semibold px-2 md:px-5 py-3 rounded-r-lg relative -left-2"
               >
                 Get Started
               </button>

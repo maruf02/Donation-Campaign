@@ -32,17 +32,18 @@ const Statistics = () => {
   ];
 
   const options = {
-    title: "My Daily Activities",
-    legend: {
-      position: "bottom",
-    },
+    // title: "Donation Activities:",
+    // legend: {
+    //   position: "bottom",
+    // },
+    legend: "none",
     colors: ["#00C49F", "#FF444A"],
   };
 
   return (
-    <div>
-      <h2>card length: {cards.length}</h2>
-      <h2>donate Store Length:{totalStoreCards}</h2>
+    <div className="w-full h-screen">
+      {/* <h2>card length: {cards.length}</h2>
+      <h2>donate Store Length:{totalStoreCards}</h2> */}
       <Chart
         chartType="PieChart"
         data={data}
@@ -50,6 +51,16 @@ const Statistics = () => {
         width={"100%"}
         height={"400px"}
       />
+      <div className=" container mx-auto justify-center text-center flex flex-col md:flex-row">
+        <div className="flex">
+          <p className="mr-4 text-lg">Your Donation</p>
+          <p className="w-24 h-2 bg-[#00C49F] mr-8 mt-3 rounded"></p>
+        </div>
+        <div className="flex">
+          <p className="mr-4 text-lg">Total Donation</p>
+          <p className="w-24 h-2 bg-[#FF444A] mt-3 rounded"></p>
+        </div>
+      </div>
     </div>
   );
 };

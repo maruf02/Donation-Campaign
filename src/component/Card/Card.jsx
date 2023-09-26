@@ -23,7 +23,7 @@ const Card = ({ card }) => {
   };
   return (
     <Link to={`/card/${id}`}>
-      <div className="card card-compact w-fit  shadow-xl" style={cardStyle}>
+      <div className="card card-compact w-fit ml-6 shadow-xl" style={cardStyle}>
         <figure>
           <img src={picture} alt="" className="w-80 h-48" />
         </figure>
