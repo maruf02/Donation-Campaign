@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveDonate } from "../../utility/localStorage";
+import { getStoreDonate, saveDonate } from "../../utility/localStorage";
 
 const CardDetails = () => {
   const cards = useLoaderData();

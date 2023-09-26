@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./Style.css";
 
 const MenuBar = () => {
   return (
@@ -10,13 +11,19 @@ const MenuBar = () => {
       </div>
       <div className="flex gap-4 mt-6 list-none ">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" className="activeNavLink ">
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/Donation">Donation</NavLink>
+          <NavLink to="/Donation" className="activeNavLink ">
+            Donation
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/Statistics">Statistics</NavLink>
+          <NavLink to="/Statistics" className="activeNavLink ">
+            Statistics
+          </NavLink>
         </li>
       </div>
     </div>

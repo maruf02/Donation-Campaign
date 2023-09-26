@@ -14,11 +14,10 @@ const Header = ({ setSearchText }) => {
       <div
         className="hero h-[500px]"
         style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
+          backgroundImage: "url(https://i.ibb.co/tPz3tK9/Rectangle-4281.pngs)",
         }}
       >
-        <div className="hero-overlay bg-opacity-90"></div>
+        <div className="hero-overlay bg-opacity-90 bg-gray-200"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="">
             <h1 className="mb-14  text-5xl font-bold text-black">
@@ -26,8 +25,18 @@ const Header = ({ setSearchText }) => {
             </h1>
 
             <div>
-              <input type="text" className="bg-white" id="searchText" />
-              <button onClick={handleClickSearch} className="btn btn-primary">
+              {/* <input type="text" className="bg-white" id="searchText" /> */}
+              <input
+                type="text"
+                placeholder="Search here...."
+                id="searchText"
+                className="input input-bordered w-full max-w-xs bg-white"
+              />
+              <button
+                onClick={handleClickSearch}
+                // className="btn btn-primary relative -left-2 rounded-r-lg"
+                className="bg-[#FF444A] px-5 py-3 rounded-r-lg relative -left-2"
+              >
                 Get Started
               </button>
             </div>
