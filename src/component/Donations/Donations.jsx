@@ -14,12 +14,12 @@ const Donations = () => {
       const donated = donates.filter((donate) =>
         storedCardId.includes(donate.id)
       );
-      console.log("donated", storedCardId.length);
+      // console.log("donated", storedCardId.length);
       setHaveDonate(donated);
     }
   }, []);
 
-  console.log(haveDonate);
+  // console.log(haveDonate);
   return (
     <div className="container mx-auto mt-20 h-full lg:h-screen">
       <div className="grid grid-col-span-1 lg:grid-cols-2 gap-10">
